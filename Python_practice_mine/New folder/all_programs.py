@@ -1480,5 +1480,4 @@ def file(filepath):
         # print(d, type(d))
 
 
-
 # file(filepath=r"C:\Users\Admin\OneDrive\Desktop\example.toml")
