@@ -1,0 +1,4 @@
+check substrings is present or not:
+#include <stdio.h>
+#include<string.h>
+#include <stdbool.h>

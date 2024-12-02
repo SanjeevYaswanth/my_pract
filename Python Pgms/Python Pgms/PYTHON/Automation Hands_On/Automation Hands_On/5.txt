@@ -1,0 +1,5 @@
+WMI learning
+-----------
+1. WMI module.
+	https://docs.microsoft.com/en-us/windows/desktop/wmisdk/using-wmi
+2. Powershell Scripting

@@ -1,0 +1,8 @@
+1.Reading and Writing Text Data to file use all attributes (r,w,r+,w+,ab..etc)
+2.Printing to a File with a Different Separator or Line Ending
+3.Reading and Writing Binary Data
+4.Writing to a File That Doesn’t Already Exist
+5.Performing I/O Operations on a String
+6.Reading and Writing Compressed Datafiles
+7.Zip or Unzip in python
+8.Adding or Changing the Encoding of an Already Open File

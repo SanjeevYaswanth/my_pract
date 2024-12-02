@@ -1,0 +1,310 @@
+09/11/2020
+
+1 Given a text file fname, the task is to count the total number of characters, words, spaces and lines in the file.
+
+sol:
+
+import re
+
+with open('abcd.txt','r') as f:
+    
+    special_characters = re.findall(r"[, .!?]", f)
+    words = f.split()
+    space=re.findall('[\s]',f)
+
+
+print("Total special characters :", len(special_characters))
+print("Total words :", len(words))
+print('total spaces:',len(space))
+
+o/p:
+
+
+
+2 WAP which can take function as argument and return function reference
+
+sol:
+
+#defining the function 
+def f1(a):
+    print('in f1:',a)
+
+# calling the function 
+f1(100)
+print(f1)
+
+output:
+
+in f1: 100
+<function f1 at 0x035F70B8>
+
+
+
+3 WAP to Append content of one text file to another.(Having two file names entered from users, the task is to append the content of the
+ second file to the content of the first file.)
+
+
+sol:
+# entering the file names
+firstfile = input("Enter the name of first file ")
+secondfile = input("Enter the name of second file ")
+
+# opening both files in read only mode to read initial contents
+f1 = open(firstfile, 'r')
+f2 = open(secondfile, 'r')
+
+# printing the contens of the file before appending
+print('content of first file before appending -', f1.read())
+print('content of second file before appending -', f2.read())
+
+# closing the files
+f1.close()
+f2.close()
+
+# opening first file in append mode and second file in read mode
+f1 = open(firstfile, 'a+')
+f2 = open(secondfile, 'r')
+
+# appending the contents of the second file to the first file
+f1.write(f2.read())
+
+# relocating the cursor of the files at the beginning
+f1.seek(0)
+f2.seek(0)
+
+# printing the contents of the files after appendng
+print('content of first file after appending -', f1.read())
+print('content of second file after appending -', f2.read())
+
+# closing the files
+f1.close()
+f2.close()
+
+output:
+Enter the name of first file abcd.txt
+Enter the name of second file efgh.txt
+content of first file before appending - sanjeev
+content of second file before appending - yaswanth
+content of first file after appending - sanjeevyaswanth
+content of second file after appending - yaswanth
+
+4 Write a Python Program to check whether the given number is valid mobile number or not?
+
+sol:
+
+#importing re module
+import re
+#taking input from user
+num=input('enter mobile number:')
+#checks whether the number starts with 7 or 8 or 9 and that input contains digits of 10
+number=re.fullmatch("[6-9]\d{9}",num)
+#if it matches next checks the condition
+if number!=None:
+    print ('valid number')
+else:
+    print( 'invalid')
+
+sol:
+
+enter mobile number:9296431790
+valid number
+
+5 WAP to create a general calculator(handle the exceptions)
+
+sol:
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    try:
+        return x / y
+    except ZeroDivisionError:
+        return 'dividing with zero is  not possible'
+
+print('select operation')
+print('1.add')
+print('2.subtract')
+print('3.multiply')
+print('4.divide')
+
+while True:
+    choice=input('enter choice(1/2/3/4):')
+
+    if choice in ('1','2','3','4'):
+        num1=float(input('enter first num:'))
+        num2 = float(input('enter second num:'))
+
+        if choice=='1':
+            print(num1,'+',num2,'=',add(num1,num2))
+        elif choice =='2':
+            print(num1,'-',num2,'=',subtract(num1,num2))
+        elif choice =='3':
+            print(num1,'*',num2,'=',multiply(num1,num2))
+        elif choice =='4':
+            print(num1,'/',num2,'=',divide(num1,num2))
+
+        # break - it breaks the program and ends the running of the program
+        # continue - it contiunes the program again and again after running the pgm once also and same as pass also contiunes the pgm
+        break
+        
+
+    else:
+        print('invalid input')
+
+o/p:
+
+select operation
+1.add
+2.subtract
+3.multiply
+4.divide
+enter choice(1/2/3/4):4
+enter first num:5
+enter second num:0
+5.0 / 0.0 = zero divison not possible
+
+
+6 WAP to write JSON  to a file
+
+sol:
+1.serialization:
+
+#imporing json
+import json
+#writing the dictionary 
+json_string={'name':'sanju','age':22,'salary':21000,'ismarried':True,'ishavingGF':None}
+#converting python to json object
+emp_dict=json.dumps(json_string)
+#printing type of emp_dict
+print(type(emp_dict))
+#printing the converted dictionary to json
+print(emp_dict)
+
+#writing this json object to a file
+with open('emp.json','w') as f:
+    json.dump(json_string,f)
+
+o/p:
+
+<class 'str'>
+{"name": "sanju", "age": 22, "salary": 21000, "ismarried": true, "ishavingGF": null}
+
+2.deserialsization
+
+import json
+json_string='''{"name":"sanju","age":22,"salary":21000,"ismarried":true,"ishavingGF":null}'''
+emp_dict=json.loads(json_string)
+print(type(emp_dict))
+print(emp_dict)
+
+with open('emp.json','r') as f:
+    emp_dict=json.load(f)
+
+o/p:
+
+<class 'dict'>
+{'name': 'sanju', 'age': 22, 'salary': 21000, 'ismarried': True, 'ishavingGF': None}
+
+7 WAP to Create XML document using ElementTree. Then parse and display the data to the console. 
+
+
+sol:
+
+import xml.etree.ElementTree as xml
+def generatexml(filename):
+    root=xml.Element("details")
+    c1=xml.Element("sanjeev")
+    root.append(c1)
+    type1=xml.subElement(c1,"branch)
+    type1.text="ECE"
+
+    cgpa=xml.subElement(c1,"cgpa")
+    cgpa.text="7.57"
+    tree=xml.ElementTree(root)
+    with open(filename,"wb") as files:
+        tree.write(files)
+
+if __name__=="__main__":
+    generatexml("details.xml")
+
+o/p:
+
+<details>
+    <sanjeev>
+	<branch>ECE</branch>
+	<cgpa>7.57</cgpa>
+    </sanjeev>
+</details>
+
+
+
+
+8 WAP to Count Uppercase, Lowercase, special character and numeric values using Regex
+
+sol:
+#importing re module
+import re
+#taking input from user
+sentence =input("enter a sentence")
+# using findall() method checks howmany number of Uppercase, Lowercase, special character and numbers in a sentence
+uppercase_letters = re.findall(r"[A-Z]", sentence)
+lowercase_letters = re.findall(r"[a-z]", sentence)
+numbers = re.findall(r"[0-9]", sentence)
+special_characters = re.findall(r"[, .!?]", sentence)
+
+print("Total uppercase_letters :", len(uppercase_letters))
+print("Total lowercase_letters :", len(lowercase_letters))
+print("Total numbers :", len(numbers))
+print("Total special characters :", len(special_characters))
+
+o/p:
+
+enter a sentenceABGFHTFYUIbftyuibvftyuui21245869,236fgh.GVFTYYU?!
+Total uppercase_letters : 17
+Total lowercase_letters : 17
+Total numbers : 11
+Total special characters : 4
+
+9 WAP to Check if email address valid or not 
+
+
+sol:
+#importing re module
+import re
+#taking input from user
+s=input('enter mail id:')
+#matching the input with aplhanumerics and followed by gmail
+m=re.fullmatch('\w[a-zA-Z0-9_.]*@gmail.com',s)
+#checking the condition 
+if m!=None:
+    print('valid mail')
+else:
+    print('invalid mail')
+
+
+output:
+
+enter mail id:sanjeev2312874@hotmail.com
+invalid mail
+
+
+10 WAP to demonstrate list compehension 
+
+sol:
+#creating list
+mylist=[1,2,3,4]
+#writing a line as list comprehension with for loop and the condition
+new_list=[item*2 for item in mylist]
+print(new_list)
+
+o/p:
+
+[2, 4, 6, 8]
+

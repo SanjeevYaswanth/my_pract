@@ -1,0 +1,124 @@
+Perforce server info:
+	2020/01/21 03:23:02 pid 35530 compute end .007s 7+0us 0+0io 0+0net 59356k 0pf 
+Perforce server info:
+	2020/01/21 03:23:02 pid 35530 completed .007s 7+0us 0+0io 0+0net 59356k 0pf 
+Perforce server info:
+	2020/01/21 03:23:02 pid 35530 john@john+proj_alpha+var1+1 123.12.111.001 [Unnamed P4Perl script/v76] 'user-changes -m 1 //depot/icm/proj/proj_alpha/var1/type_b/john_cell/...#have'
+Perforce server info:
+    2020/01/21 03:28:44 pid 77143 jane@jane+proj_alpha+var1+24 123.12.111.001/123.12.111.002 [icmp4/Linux/2.6/x86_64/39359/2018.1/LINUX/39359] 'user-integrate -Ds //depot/icm/proj/proj_alpha/var1/type_a/jane_cell/pin/config.json@25411015 //depot/icm/proj/proj_alpha/var1/type_b/config.json'
+--- clients/jane%2Bproj_alpha%2Bvar1%2B24(W)
+---   total lock wait+held read/write 0ms+0ms/0ms+577ms
+Perforce server info:
+	2020/01/21 04:43:46 pid 105782 compute end .009s 9+0us 0+0io 0+0net 57104k 0pf 
+Perforce server info:
+	2020/01/21 13:09:38 pid 65374 michel@michel+proj_beta+var1+79 123.12.111.001/123.12.111.003 [icmp4/Linux/2.6/x86_64/39359/2018.1/LINUX/39359] 'user-changes -m1 ...#have'
+--- db.rev
+---   peek count 1 wait+held total/max 0ms+1515ms/0ms+1515ms
+--- db.change
+---   peek count 1 wait+held total/max 0ms+1515ms/0ms+1515ms
+
+Perforce server error:
+	Date 2020/01/21 13:09:40:
+	Pid 65387
+	Connection from 123.12.111.004:56945 broken.
+	Partner exited unexpectedly.
+Perforce server info:
+	2020/01/21 04:43:46 pid 105782 completed .009s 9+0us 0+0io 0+0net 57104k 0pf 
+Perforce server info:
+	2020/01/21 04:43:46 pid 105782 chris@chris+proj_charlie+var3+722 123.12.111.004 [Unnamed P4Perl script/v76] 'user-changes -m 1 //depot/icm/proj/proj_charlie/var7/type_d/chris_cell/...#have'
+Perforce server info:
+	2020/01/21 04:43:46 pid 81922 compute end .008s 8+0us 0+0io 0+0net 59380k 0pf 
+Perforce server info:
+	2020/01/21 04:43:46 pid 81922 completed .009s 9+0us 0+0io 0+0net 59380k 0pf 
+Perforce server info:
+	2020/01/21 04:43:46 pid 81922 chris@chris+proj_charlie+var3+722 123.12.111.005 [Unnamed P4Perl script/v76] 'user-changes -m 1 //depot/icm/proj/proj_charlie/var6/type_d/chris_block/...#have'
+Perforce server info:
+	2020/01/21 04:43:46 pid 105452 completed .277s 0+1us 0+80io 0+0net 5512k 0pf 
+Perforce server info:
+	2020/01/21 04:43:46 pid 105302 completed 142s 0+2us 0+288io 0+0net 5612k 0pf
+Perforce server info:
+	2020/01/21 04:41:23 pid 105302 james@james+proj_delta+var2+1050 123.12.111.001/123.12.111.010 [Unnamed P4Perl script/v76] 'dm-CommitSubmit'
+--- lapse 142s
+--- db.integed
+---   total lock wait+held read/write 0ms+0ms/0ms+142087ms
+--- db.archmap
+---   total lock wait+held read/write 0ms+0ms/0ms+142086ms
+--- db.revdx
+---   total lock wait+held read/write 0ms+0ms/142087ms+0ms
+Perforce server info:
+	2020/01/21 08:04:39 pid 83550 uma@123_12_111_007~pm~98274 123.12.111.001/123.12.111.105 [pm/Linux/2.6/x86_64/39359\F304FAC485BA0EEE4E133FFED27B7599/v84] 'user-change -o'
+Perforce server error:
+	Date 2020/01/21 08:04:39:
+	Pid 83468
+	Connection from 123.12.111.987:48572 broken.
+	Partner exited unexpectedly.
+Perforce server info:
+	2020/01/21 08:04:39 pid 83553 james@james+proj_delta+var3+643 123.12.111.001/123.12.111.055 [icmanage/Linux/2.6/x86_64/39359/v84] 'user-fstat all_cell/layout/layout.oa'
+Perforce server info:
+	2020/01/21 08:04:39 pid 83554 amy@amyhost 123.12.111.240 [icmp4/Linux/2.6/x86_64/39359/v84] 'user-login -s'
+Perforce server info:
+	2020/01/21 08:02:03 pid 79007 uma@123_12_111_123~pm~126700 123.12.111.001/123.12.111.45 [pm/Linux/2.6/x86_64/39359\5B32D0CFEE957D7DA98DE045CDB10AA6/v84] 'dm-SubmitChange'
+--- lapse 155s
+--- db.integed
+---   total lock wait+held read/write 155791ms+1ms/0ms+0ms
+---   max lock wait+held read/write 155791ms+1ms/0ms+0ms
+Perforce server info:
+	2020/01/22 02:35:20 pid 176840 completed 218s 195201+11518us 0+5008io 0+0net 1177060k 0pf 
+Perforce server info:
+	2020/01/22 02:31:41 pid 176840 isaac@isaac+proj_alpha+var1+48 123.12.111.001/123.12.111.093 [icmp4/Linux/2.6/x86_64/39359/2018.1/LINUX/39359] 'user-sync isaac1/... isaac2/... isaac3/... isaac3/... isaac4/... isaac5/... isaac6/... documentation/...'
+--- lapse 218s
+--- usage 195201+11518us 0+5008io 0+0net 1177060k 0pf 
+--- db.have
+---   pages reordered internal+leaf 1+40
+---   locks read/write 0/11 rows get+pos+scan put+del 0+18+1223768 885+215
+---   peek count 18 wait+held total/max 0ms+29054ms/0ms+9588ms
+--- db.revdx
+---   locks read/write 18/0 rows get+pos+scan put+del 0+18+1005232 0+0
+---   total lock wait+held read/write 0ms+178357ms/0ms+0ms
+---   max lock wait+held read/write 0ms+88759ms/0ms+0ms
+--- db.revhx
+---   locks read/write 18/0 rows get+pos+scan put+del 0+18+1224316 0+0
+---   total lock wait+held read/write 0ms+178357ms/0ms+0ms
+---   max lock wait+held read/write 0ms+88759ms/0ms+0ms
+--- db.rev
+---   total lock wait+held read/write 0ms+179838ms/0ms+0ms
+---   max lock wait+held read/write 0ms+89272ms/0ms+0ms
+--- db.working
+---   peek count 18 wait+held total/max 1ms+29051ms/1ms+9587ms
+
+Perforce server info:
+	2020/01/22 02:35:20 pid 185504 chris@chrishost 123.12.111.001/123.12.111.106 [pm/Linux/2.6/x86_64/39359/v84] 'user-info'
+Perforce server info:
+	2020/01/21 08:04:38 pid 78918 completed 156s 2+0us 0+280io 0+0net 5468k 0pf 
+Perforce server info:
+	2020/01/21 08:02:02 pid 78918 michel@123_12_111_045~pm~126665 123.12.111.002/123.12.111.045 [pm/Linux/2.6/x86_64/39359\B33752EC5BF64CC8DE8E80A370F53381/v84] 'dm-CommitSubmit'
+--- lapse 156s
+--- db.integed
+---   total lock wait+held read/write 0ms+0ms/0ms+156698ms
+--- db.archmap
+---   total lock wait+held read/write 0ms+0ms/0ms+156697ms
+--- db.revdx
+---   total lock wait+held read/write 0ms+0ms/156698ms+0ms
+
+Perforce server info:
+	2020/01/21 08:04:38 pid 83472 michel@123_12_111_045~pm~126665 123.12.111.002/123.12.111.045 [pm/Linux/2.6/x86_64/39359\B33752EC5BF64CC8DE8E80A370F53381/v84] 'user-client -d michel+proj_alpha+var1+90502'
+Perforce server info:
+	2020/01/21 13:09:38 pid 77985 completed 4078s 753500+22773us 608+8io 0+0net 745760k 10pf 
+Perforce server info:
+	2020/01/21 12:01:39 pid 77985 deepak@deepak+proj_zeta+var9+95 123.12.111.002/123.12.111.137 [icmp4/Linux/2.6/x86_64/39359/2018.1/LINUX/39359] 'user-clean'
+--- lapse 4078s
+--- usage 753500+22773us 608+8io 0+0net 745760k 10pf 
+--- rpc msgs/size in+out 661221+692486/477mb+473mb himarks 318788/186692 snd/rcv 4.99s/3302s
+--- db.have
+---   total lock wait+held read/write 0ms+10829ms/0ms+0ms
+--- db.rev
+---   total lock wait+held read/write 0ms+10829ms/0ms+0ms
+--- db.working
+---   total lock wait+held read/write 0ms+10829ms/0ms+0ms
+--- clients/deepak%2Bproj_zeta%2Bvar9%2B95(W)
+---   total lock wait+held read/write 0ms+0ms/0ms+4078896ms
+
+Perforce server info:
+	2020/01/21 13:09:38 pid 65014 compute end .017s 16+1us 0+8io 0+0net 28696k 0pf 
+Perforce server info:
+	2020/01/21 13:09:38 pid 65014 completed .018s 16+1us 0+8io 0+0net 28696k 0pf

@@ -1,0 +1,179 @@
+1.Write a Python Program to find factorial of a number(Handle the exceptions)
+
+sol:
+
+
+def factorial(n):
+    fact = 1
+    try:
+        for i in range(1,n+1):
+            fact=fact*i
+        print('Factorial of the number %d is %d'%(n,fact))
+    except:
+        print('value error')
+if __name__== "__main__":
+    factorial(int(input('enter num:')))
+
+
+
+2.Write a python program to create a dictionary, remove the keys who having dublicate values.(Use Funtions), (Handle the exceptions)
+
+# Remove duplicate values in dictionary
+# initializing dictionary
+test_dict = { 'pro' : 10, 'is' : 15, 'best' : 20, 'for' : 10, 'geeks' : 20}
+
+# printing original dictionary
+print("The original dictionary is : " + str(test_dict))
+
+# Remove duplicate values in dictionary
+# Using loop
+temp = []
+res = dict()
+try:
+    for key, val in test_dict.items():
+	    if val not in temp:
+		    temp.append(val)
+		    res[key] = val
+
+# printing result
+    print("The dictionary after values removal : " + str(res))
+except :
+    print('no duplicate')
+
+3.Write a python program to Convert any sting into upper case and split each word. (Write decorator ), (Handle the exceptions)
+
+sol:
+
+#defining nested function
+def upper(func):
+    def inner():
+        str1=func()
+        return str1.upper()
+    return inner
+
+def split(func):
+    def inner2():
+        str2=func()
+        return str2.split()
+    return inner2
+
+#using multiple decorator
+@split
+@upper
+
+def wishes():
+    return 'hello guys good morining'
+
+print(wishes())
+
+
+o/p:
+
+['HELLO', 'GUYS', 'GOOD', 'MORINING']
+
+
+
+4.Write a python program to Create XML document using ElementTree. Then parse and display the data to the console. (Handle the exceptions)
+
+sol:
+
+import xml.etree.ElementTree as xml
+def generatexml(filename):
+    root=xml.Element("details")
+    c1=xml.Element("sanjeev")
+    root.append(c1)
+    type1=xml.subElement(c1,"branch)
+    type1.text="ECE"
+
+    cgpa=xml.subElement(c1,"cgpa")
+    cgpa.text="7.57"
+    tree=xml.ElementTree(root)
+    with open(filename,"wb") as files:
+        tree.write(files)
+
+if __name__=="__main__":
+    generatexml("details.xml")
+
+o/p:
+
+<details>
+    <sanjeev>
+	<branch>ECE</branch>
+	<cgpa>7.57</cgpa>
+    </sanjeev>
+</details>
+
+
+
+5.Write a python program to search a file in C drive of the system(Get the file name from user), (Handle the exceptions)
+
+sol:
+
+#importing os module
+import os
+
+def find_files(filename):
+   result = []
+   search_path= 'C:\Pythonprograms'
+   for root, dir, files in os.walk(path.search_path):
+       if filename in files:
+           result=result.append(os.path.join(root, filename))
+           return result
+
+#searching the file in the given path
+try:
+    print(find_files(input('enter filename:')))
+    print('file exist')
+
+except NameError:
+    print('file not found')
+
+
+
+
+6.Write a python program to Read and change the resolution of image programatically. (Handle the exceptions)
+
+def jpeg_res(filename):
+ 
+
+   # open image for reading in binary mode
+   with open(filename,'rb') as img_file:
+
+       # height of image (in 2 bytes) is at 164th position
+       img_file.seek(163)
+
+       # read the 2 bytes
+       a = img_file.read(2)
+
+       # calculate height
+       height = (a[0] << 8) + a[1]
+
+       # next 2 bytes is width
+       a = img_file.read(2)
+
+       # calculate width
+       width = (a[0] << 8) + a[1]
+
+   print("The resolution of the image is",width,"x",height)
+
+jpeg_res("C:\\Users\\sanju\\Documents\\Python\\s.jpg")
+
+
+7.Write a python program to collect all loaded driver details of a system. (Write the log into a file),(Handle the exceptions)
+
+import subprocess
+import sys
+subprocess.Popen(['powershell.exe','Set-ExecutionPolicy RemoteSigned'], stdout=subprocess.PIPE)
+subprocess.Popen(['powershell.exe','Set-ExecutionPolicy unrestricted'], stdout=subprocess.PIPE)
+p = subprocess.Popen(['powershell.exe','C:\\eSupport\\eDriver\\Software\\Driver\\DCH\\ASUS'], stdout=subprocess.PIPE)
+w = p.communicate()
+o=str(w)
+f=open("C:\\Users\\sanju\\Documents\\Python\\driver_details.txt", "wt")
+f.write(o)
+
+
+
+8.Write a python program for Reading cpu speed and fan speed. (Handle the exceptions)
+ 
+This can be done by using WMI module
+

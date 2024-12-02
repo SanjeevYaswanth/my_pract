@@ -1,0 +1,3 @@
+Hi ethis is the body of the mail to be merged
+
+this content should be printed with different names after running

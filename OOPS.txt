@@ -1,0 +1,113 @@
+'''Encapsulation'''
+
+class accessModifiers:
+    def __init__(self, public, protected, private):
+        self.public = public
+        self._protected = protected
+        self.__private = private
+        
+    def printing(self):
+        print(self.public, self._protected, self.__private)
+        
+a = accessModifiers(1,2,3)
+print(a.public)
+print(a._protected)
+a.public = 5
+print(a.public)
+a._protected = 6
+print(a._protected)
+a.__private = 7
+a.printing()
+
+
+
+
+
+'''Inheritance'''
+
+'''single Inheritance'''
+
+class parent:
+    def parentFunc(self):
+        print("parent")
+        
+class child(parent):
+    def childFunc(self):
+        print("child")
+        
+a = child()
+a.childFunc()
+a.parentFunc()
+
+
+'''multiple Inheritance'''
+
+class Father:
+    def fatherfun(self):
+        print("Father")
+
+class Mother:
+    def motherfun(self):
+        print("Mother")
+
+class Child(Father, Mother):
+    def childfun(self):
+        print("Child")
+        
+b = Child()
+b.childfun()
+b.motherfun()
+b.fatherfun()
+
+
+'''multilevel Inheritance'''
+
+class grandparents:
+    def gp(self):
+        print("grandparents")
+        
+class parents(grandparents):
+    def p(self):
+        print("parents")
+        
+class child(parents):
+    def ch(self):
+        print("child")
+        
+c = child()
+c.ch()
+c.p()
+c.gp()
+
+'''hierarical Inheritance'''
+
+class parent:
+    def parentFunc(self):
+        print("parent")
+        
+class child1(parent):
+    def childFunc1(self):
+        print("child1")
+
+class child2(parent):
+    def childFunc2(self):
+        print("child2")
+        
+'''Hybrid Inheritance'''
+
+class grandparents:
+    def gp1(self):
+        print("gp1")
+        
+class parents(grandparents):
+    def par(self):
+        print("par1")
+        
+class children(grandparents, parents):
+    def chil(self):
+        print("children")
+
+
+https://www.youtube.com/watch?v=XpFsMB6FoOs - Linux booting process
+
+https://www.youtube.com/watch?v=CBYHwZcbD-s - Data Structures and algorithms

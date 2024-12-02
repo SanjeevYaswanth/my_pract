@@ -1,0 +1,53 @@
+	READ and do some HANDS-ON to get familier with these module .... and use as per the requirement
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+
+codecs module
+--------------
+	https://docs.python.org/3/library/codecs.html
+	https://svn.python.org/projects/python/trunk/Lib/codecs.py
+	https://pymotw.com/2/codecs/
+
+shutil module
+--------------
+	1. copy and move files with Shutil, Copying Files to another directory
+	2. Copy File with MetaData Information
+	3. fetch the information about the file last modified
+	4. Replicating complete directory
+	5. Removing a Directory
+	6. Finding files
+	7. Monitoring File-system Space
+	8. Moving and Renaming Files and Folders
+https://www.journaldev.com/20536/python-shutil-module
+https://stackoverflow.com/questions/123198/how-do-i-copy-a-file-in-python
+https://automatetheboringstuff.com/chapter9/
+
+psutil module
+-------------
+	https://psutil.readthedocs.io/en/latest/
+
+Logging module
+--------------
+	https://docs.python.org/3/library/logging.html
+	https://realpython.com/python-logging/
+	https://www.geeksforgeeks.org/logging-in-python/
+	https://fangpenlin.com/posts/2012/08/26/good-logging-practice-in-python/
+	https://docs.python-guide.org/writing/logging/
+
+configparser module
+-------------------
+	https://docs.python.org/3/library/configparser.html
+
+OpenCV module
+--------------
+	https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_setup/py_intro/py_intro.html
+	https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html
+	
+Pywinauto or PyAutoGUI module (UI Automation)
+-----------------------------
+	https://pywinauto.github.io/
+	https://media.readthedocs.org/pdf/pywinauto/latest/pywinauto.pdf
+	https://www.youtube.com/watch?v=mhNIHgJPP3g&feature=youtu.be
+	https://www.youtube.com/watch?v=1RE5tSPO2RI&app=desktop
+	
+	

@@ -1,0 +1,127 @@
+1.WAP to search a file in C drive of the system(Get the file name from user)
+
+sol:
+
+#importing os module
+import os
+
+def find_files(filename, search_path):
+   result = []
+
+# Walking top-down in the folder 
+   for root, dir, files in os.walk(search_path):
+      if filename in files:
+         result.append(os.path.join(root, filename))
+   return result
+
+#searching the file in the given path
+print(find_files("palindrom.py","C:\Pythonprograms"))
+
+o/p:
+
+['C:\\Pythonprograms\\palindrom.py']
+
+
+
+
+2.WAP to create 3 layers of directory and rename each of those
+
+sol:
+
+#importing os module
+import os
+
+#creating folders one inside another
+f=os.makedirs('C:/Users/sanju/Pictures/Camera Roll/myfolder/folder1/old/new')
+print(f)
+
+files=os.listdir(f)
+
+#renaming the folders
+for i in range(len(files)):
+    os.rename(files[i],str(i+1)+'layer')
+
+
+
+
+
+3
+WAP to create a student database (data is : student name, Id and grade)
+
+4.Create a calculator using argparse module
+
+sol:
+
+import argparse
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+    parser.add_argument('numb1',help='first num')
+    parser.add_argument('numb2', help='second num')
+    parser.add_argument('operation', help='operation')
+
+    args=parser.parse_args()
+
+    print(args.numb1)
+    print(args.numb2)
+    print(args.operation)
+
+    n1=int(args.numb1)
+    n2=int(args.numb2)
+    result=None
+
+    if args.operation=='add':
+        result=n1+n2
+    elif args.operation=='subtract':
+        result = n1-n2
+    elif args.operation=='multiply':
+        result = n1*n2
+    elif args.operation=='divide':
+        result=n1/n2
+
+    print(result)
+
+o/p:
+
+C:\Pythonprograms>calculator_argparse.py 2 5 add
+2
+5
+add
+7
+
+C:\Pythonprograms>calculator_argparse.py 2 5 divide
+2
+5
+divide
+0.4
+
+
+
+
+5
+WAP to collect the driver details of a system also enable the script to collect logs
+
+
+
+PS C:\WINDOWS\system32> devcon driverfiles *
+PCI\VEN_8086&DEV_5921&SUBSYS_1A0E1043&REV_06\3&11583659&0&10
+    Name: Intel(R) HD Graphics 620
+    No driver information available for the device.
+STORAGE\VOLUME\{8ED538BF-16A2-11EA-934B-806E6F6E6963}#0000000000100000
+    Name: Volume
+    No driver information available for the device.
+ACPI\PNP0C02\1
+    Name: Motherboard resources
+    No driver information available for the device.
+ACPI\PNP0C02\2
+    Name: Motherboard resources
+    No driver information available for the device.
+ACPI\PNP0C02\5
+    Name: Motherboard resources
+    No driver information available for the device.
+PCI\VEN_8086&DEV_282A&SUBSYS_13111043&REV_21\3&11583659&0&B8
+    Name: Intel(R) Chipset SATA/PCIe RST Premium Controller
+    No driver information available for the device.
+ACPI\PNP0C14\OPT1
+    Name: Microsoft Windows Management Interface for ACPI
+    No driver information available for the device.

@@ -1,0 +1,4 @@
+1. Extract Date, country name, Year form the file named text.txt and print it to another file.
+2. Extract mail id, contact no, city name from https://www.redbus.in/info/contactus and print it to another file.
+3. Validate any land-phone no belongs to bangalore.
+4. Extract address from https://www.redbus.in/info/contactus and print it to another file.

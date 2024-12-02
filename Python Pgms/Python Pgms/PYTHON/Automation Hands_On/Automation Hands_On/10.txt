@@ -1,0 +1,4 @@
+Powercfg Tool
+-------------
+	https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options
+	https://msdn.microsoft.com/en-us/library/dn898599(v=vs.85).aspx

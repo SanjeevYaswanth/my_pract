@@ -1,0 +1,120 @@
+1.Reading and Writing Text Data to file use all attributes (r,w,r+,w+,ab..etc)
+
+sol:
+
+#program to read from text file
+f = open("C:/Users/sanju/Documents/Python/arraycode.txt", "r")
+#reading full file
+rd = f.read()
+#then printing it
+print(rd)
+f.close()
+
+o/p:
+typecode		ctype		minimum size in bytes
+'b'		     signed integer		1
+'B'		   unsigned integer		1
+'i'		     signed integer		2
+'I'		   unsigned integer		2
+'l'		     signed integer		4
+'L'		   unsigned integer		4
+'f'		   floating point		4
+'d'		  double precision		8
+'u'		 unicode character		2
+
+#program to append contents in a file using 'a' mode of open()
+f = open("arraycode.txt", "a")
+wr=f.write("this line is being appended to the file which was previously created.")
+print(wr)
+f.close()
+
+#program to write contents into the mentioned file using 'w' mode of open()
+f = open("arraycode.txt", "w")
+wr=f.write("this file has been created using python write and w mode \n \n next line brought using endline i.e. '\n'")
+print(wr)
+f.close()
+
+f = open("arraycode.txt", "r+")
+rd = f.read()
+print(rd)
+
+f = open("arraycode.txt", "w+")
+wt = f.write('welcome')
+print(wt)
+
+f = open("arraycode.txt", "w+b")
+wt = f.write('82964')
+print(wt)
+
+
+2.Printing to a File with a Different Separator or Line Ending
+
+
+3.Reading and Writing Binary Data
+
+sol:
+
+f = open("arraycode.bin", "wb")
+wt = f.write('82964')
+print(wt)
+
+f=open("binfile.bin","rb")
+num=list(f.read())
+print (num)
+f.close()
+
+
+4.Writing to a File That Doesn’t Already Exist
+
+filename = "C:/Users/sanju/Documents/Python/sample.txt"
+with open(filename, "w") as f:
+    f.write("welcome to new file")
+
+
+5.Performing I/O Operations on a String
+
+s1=input('enter 1st string:')
+s2=input('enter 2nd string:')
+print(s1+s2)
+print(s1+s2*2)
+print(s1*2,s2*2)
+
+o/p:
+enter 1st string:sanjeev
+enter 2nd string:yaswanth
+sanjeevyaswanth
+sanjeevyaswanthyaswanth
+sanjeevsanjeev yaswanthyaswanth
+
+
+6.Reading and Writing Compressed Datafiles
+
+#program to read from and write to a compressed file.
+import gzip #importing required module
+with gzip.open(r'C:\Users\sanju\Desktop\Python Pgms\PYTHON\Python Programming.zip', 'rt') as f:
+    text = f.read() #opening and reading the compressed file.
+    print(text)
+with gzip.open(r'C:\Users\sanju\Desktop\Python Pgms\PYTHON\Python Programming1.zip', 'wt') as f:
+    f.write('welcome') #opening and writing to a compressed file.
+7.Zip or Unzip in python
+
+import zipfile
+
+print('zip started')
+zip_file=zipfile.ZipFile('C:/Users/sanju/Documents/Python/FileZip.zip','w')
+zip_file.write('file1.txt',compress_type=zipfile.ZIP_DEFLATED)
+zip_file.write('file2.txt',compress_type=zipfile.ZIP_DEFLATED)
+zip_file.close()
+print('zip completed')
+
+unzip_file.extract('file1.txt')
+unzip_file.extract('file2.txt')
+
+
+
+8.Adding or Changing the Encoding of an Already Open File
+
+f = open("arraycode.txt", "a")
+wr=f.write("this line is being appended to the file which was previously created.")
+print(wr)
+f.close()

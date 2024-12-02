@@ -1,0 +1,12 @@
+1. open file and read data .. write to some other text file..
+2. write a script that will find a specific string in a .txt file and find how many times the string is avilable....print the o/p into another file.
+3. Reading and Writing CSV Data encoded as a CSV file.
+4. Reading and Writing JSON Data
+5. Parsing Simple XML Data
+6. Parsing Huge XML Files Incrementally (You need to extract data from a huge XML document using as little memory as possible.)
+7. Take the data in a Python dictionary and turn it into XML.
+8. read an XML document, make changes to it, and then write it back out as XML.
+9. Python Program to Find the Size (Resolution) of a Image
+10.Python Program to Merge Mails (When we want to send the same invitations to many people, the body of the mail does not change. Only the name (and maybe address) needs to be changed.
+Mail merge is a process of doing this. Instead of writing each mail separately, we have a template for body of the mail and a list of names that we merge together to form all the mails.)
+ 

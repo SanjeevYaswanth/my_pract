@@ -1,0 +1,11 @@
+1. check windows firewall settings.
+2. Rename some file name.
+3. Get file properties.
+4. Read speaker details, brightness, resolution.
+5. Install, Uninstall driver programatically.
+6. Read and change the resolution of image programatically.
+7. Shut-down, restart system programatically.
+8. Read BIOS, SMBIOS, ACPI information.
+9. capturing printscreen.
+10. Switch on and off camara.
+11. Play audio and video.

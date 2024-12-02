@@ -1,0 +1,75 @@
+1. Extract Date, country name, Year form the file named text.txt and print it to another file.
+
+'''program to find date, year and country names in file'''
+'''importing required modules'''
+from collections import OrderedDict
+import re
+f = open("C:\\Users\\sanju\\Documents\\Python\\text.txt", "rt")
+'''reading the file to be extracted from'''
+rd = f.read()
+country = ["Japan", "China", "United States", "Germany", "Poland", "France", "Britain"]
+'''print("Year ")'''
+'''finding years'''
+year = re.findall(r"[0-9]{4}", rd)
+'''print(year)
+print("Date ")'''
+'''finding dates'''
+dates = re.findall(r"[0-9]{1,2} [A-z]{4,10} [0-2]{1}[0-9]{3}", rd)
+'''print(dates)'''
+'''splitting the words to get city names'''
+rd1 = ' '.join(OrderedDict((d,d) for d in rd.split()).keys())
+'''writing the output in other file'''
+with open("C:\\Users\\sanju\\Documents\\Python\\output.txt", 'wt') as w:
+    for item in year:
+        w.write("%s\n" % item)
+    for i in dates:
+        w.write("%s\n" % i)
+    for j in country:
+        m = re.findall(j, rd1)
+        for cou in m:
+            w.write(cou)
+
+
+2. Extract mail id, contact no, city name from https://www.redbus.in/info/contactus and print it to another file.
+
+'''Program to get mail ids phone nos and city names from web page'''
+'''importing required modules'''
+import re
+import urllib.reques
+'''reading the required entries using respective regexs''' 
+with urllib.request.urlopen("http://www.python.org") as url:
+    rd = url.read().decode()
+e_mail = re.findall(r"[a-z]{4,10}@redbus.com", rd)
+ph = re.findall(r"Ph:[0-9]{3}-[0-9]{3,9}", rd)
+city = re.findall(r"[A-Z]{3,10}", rd)
+'''writing them in file'''
+with open("C:\\Users\\sanju\\Documents\\Python\\output_net.txt", "wt") as w:
+    for mail in e_mail:
+        print(mail)
+        w.write(mail)
+    for phone in ph:
+        w.write(phone)
+    for c in city:
+        w.write(c)
+
+
+3. Validate any land-phone no belongs to bangalore.
+
+#Validate any land-phone no belongs to bangalore.
+#importing regular expression module
+import re
+#creating a list
+print("Enter the number to be checked:")
+li=[input()]
+#taking for loop
+for val in li:
+    #re.match function two arguments pattern and string nad len is fixed
+    if re.match(r'[0]{1}[8]{1}[0]{1}[0-9]{8}', val) and len(val) == 11:
+        print('Yes,the landline number is of bangalore.')
+    elif re.match(r'[0]{1}[8]{1}[0]{1}[-]{1}[0-9]{8}',val) and len(val) == 12:
+        print ('Yes,the landline number is of bangalore.')
+    else:
+        print ('No,the number is invalid')
+
+
+4. Extract address from https://www.redbus.in/info/contactus and print it to another file.

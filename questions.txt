@@ -1,0 +1,462 @@
+lt = [2,5,1,6,8,3,9,4,3,2]
+
+for i in range(len(lt)):
+    for j in range(i+1):
+        if lt[i]<lt[j]:
+            lt[i], lt[j] = lt[j], lt[i]
+
+print(lt)    
+
+print(lt[-2])
+
+------------------------------------------------------
+
+st = "aabbcccddde"
+
+dt = {}
+
+for i in st:
+    if i in dt:
+        dt[i] +=1
+        
+    else:
+        dt[i] = 1
+        
+print(dt)
+
+------------------------------------------------------
+
+lt = [2,5,1,6,8,3,9,4,3,2,1,6]
+
+new_lt = []
+
+for i in lt:
+    if i in new_lt:
+        continue
+    else:
+        new_lt.append(i)
+        
+print(new_lt)
+
+------------------------------------------------------
+
+lt = [2,5,1,6,8,3,19,4]
+
+for i in range(len(lt)):
+    for j in range(i+1):
+        if lt[i]<lt[j]:
+            lt[i], lt[j] = lt[j], lt[i]
+
+print(lt)
+missed_numbers = []
+for i in range(lt[0], lt[-1]+1):
+    if i in lt:
+        continue
+    else:
+        missed_numbers.append(i)
+        
+print(missed_numbers)
+
+------------------------------------------------------
+
+'''palindrome'''
+
+# madam = madam
+
+# 12321 = 
+def palindrome_check(string):
+    rev_str = ""
+    
+    for i in str(string):
+        rev_str = i+rev_str
+        
+    print(rev_str)
+    
+    if string == int(rev_str):
+        print(f"{string} is palindrome")
+        
+    else:
+        print(f"{string} is not a palindrome")
+    
+palindrome_check(123211)
+
+------------------------------------------------------
+
+'''Shallow Copy
+A shallow copy creates a new object, but inserts references into it to the objects found in the original.
+This means changes to nested objects in the copy will reflect in the original.
+
+In shallow copy modified values happens in only copied list for single index
+but modify happends in both copied and original ist for nested list i.e. double index'''
+
+import copy
+
+original_list = [0, [1, 2, 3], [4, 5, 6], [7, 8, 9]]
+shallow_copied_list = copy.copy(original_list)
+
+# Modifying the nested object in the shallow copy
+shallow_copied_list[1][0] = 'X'
+shallow_copied_list[0] = 'A'
+
+print("Original List:", original_list)
+print("Shallow Copied List:", shallow_copied_list)
+
+o/p:
+Original List: [0, ['X', 2, 3], [4, 5, 6], [7, 8, 9]]
+Shallow Copied List: ['A', ['X', 2, 3], [4, 5, 6], [7, 8, 9]]
+
+
+
+'''Deep Copy
+A deep copy creates a new object and recursively copies all objects found in the original. 
+This means changes to nested objects in the copy do not affect the original.
+
+In deep copy modified values happens in copied list for single index and double index(nested list) also'''
+
+import copy
+
+original_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+deep_copied_list = copy.deepcopy(original_list)
+
+# Modifying the nested object in the deep copy
+deep_copied_list[0][0] = 'X'
+deep_copied_list[0] = 'A'
+
+print("Original List:", original_list)
+print("Deep Copied List:", deep_copied_list)
+
+o/p:
+Original List: [0, [1, 2, 3], [4, 5, 6], [7, 8, 9]]
+Deep Copied List: ['A', ['X', 2, 3], [4, 5, 6], [7, 8, 9]]
+
+------------------------------------------------------
+
+'''selection sort'''
+
+arr = [3,2,4,6,5,1]
+
+for i in range(0, len(arr)-1):
+    min_idx = i
+    for j in range(i+1, len(arr)):
+        if arr[j] < arr[min_idx]:
+            min_idx = j
+            
+    arr[i], arr[min_idx] = arr[min_idx], arr[i] 
+    
+print(arr)
+
+------------------------------------------------------
+
+"""insertion sorting"""
+
+for i in range(1, len(arr)):
+    j = i
+    while arr[j-1] > arr[j] and j>0:
+        arr[j-1], arr[j] = arr[j], arr[j-1]
+        j-=1
+        
+print(arr)
+
+------------------------------------------------------
+
+def binary_search_with_recursive(arr, target, low, high):
+    
+    if low <= high:
+        mid = (low+high)//2
+        
+        if arr[mid] == target:
+            return mid
+        
+        elif arr[mid] < target:
+            return binary_search_with_recursive(arr, target, mid+1, high)
+        
+        else:
+            return binary_search_with_recursive(arr, target, low, mid-1)
+            
+    else:
+        return -1
+
+
+def binary_search_without_recursive(arr, target, low, high):
+    while low <= high:
+        mid = (low+high)//2
+        
+        if arr[mid] < target:
+            low = mid+1
+            
+        elif arr[mid] > target:
+            high = mid-1
+        
+        else:
+            return mid
+            
+    return -1
+
+arr = [9,8,3,6,1,7]
+target = 6
+result = binary_search_with_recursive(sorted(arr), target, 0, len(arr)-1)
+#result = binary_search_without_recursive(sorted(arr), target, 0, len(arr)-1)
+if result != -1:
+    print(f"Binary search of {target} found at index: {result}")
+    
+else:
+    print("Not found in array")
+
+------------------------------------------------------
+'''Linear search'''
+
+def linear_search(arr, target):
+    
+    for i in range(len(arr)+1):
+        if arr[i]==target:
+            return i
+    return -1
+        
+
+arr=[3,2,4,6,5,1]
+target=6
+result = linear_search(sorted(arr), target)
+if result != -1:
+    print(f"Linear search of {target} found at index: {result}")
+    
+else:
+    print("Not found in array")
+------------------------------------------------------
+'''Find a pair(s) from array whose difference is 5?'''
+
+Array1 = [3, 5, 7, 8, 10]
+target = 5
+for i in range(len(Array1)):
+    for j in range(len(Array1)):
+        if Array1[j]-Array1[i] ==  target:
+            print(Array1[j], Array1[i])
+
+
+------------------------------------------------------
+'''a  =  2 5 7 8 
+   b  =  3 4 9
+   
+   Insert a into b in sorted order.'''
+a = [2,5,7,8]
+b = [3,4,9]
+
+a.extend(b)
+
+print(a)
+
+for i in range(len(a)):
+    for j in range(i+1):
+        if a[i]<a[j]:
+            a[i], a[j] = a[j], a[i]
+            
+print(a)
+------------------------------------------------------
+'''How to use parent class variables in Child class ? how do you implement it?'''
+
+# Python code to demonstrate 
+# how parent constructors are called. 
+	
+# parent class 
+class Person( object ):	 
+	
+		# __init__ is known as the constructor		 
+		def __init__(self, name, idnumber):	 
+				self.name = name 
+				self.idnumber = idnumber 
+				
+		def display(self): 
+				print(self.name) 
+				print(self.idnumber) 
+	
+# child class 
+class Employee( Person ):			 
+		def __init__(self, name, idnumber, salary): 
+				self.salary = salary 
+	
+				# invoking the constructor of 
+				# the parent class 
+				Person.__init__(self, name, idnumber) 
+		
+		def show(self): 
+			print(self.salary) 
+	
+					
+# creation of an object 
+# variable or an instance 
+a = Employee('Rahul', 886012, 30000000)	 
+	
+# calling a function of the 
+# class Person using Employee's 
+# class instance 
+a.display() 
+a.show() 
+
+------------------------------------------------------
+[4, 5, 6, 7, 8, 1, 2, 3]
+
+lt = [1,2,3,4,5,6,7,8]
+n= 3
+
+new_lt = []
+result_lt = []
+for i in range(0,n):
+    new_lt.append(lt[i])
+for j in range(n,len(lt)):
+    result_lt.append(lt[j])
+    
+result_lt.extend(new_lt)
+print(result_lt)
+
+------------------------------------------------------
+print(a) as it have high time repeated and at begining
+
+s = "saa.r_ee$"
+
+count_dic = {}
+for i in s:
+    if i in count_dic:
+        count_dic[i] +=1
+    else:
+        count_dic[i] = 1
+        
+print(count_dic)
+
+for k,v in count_dic.items():
+    
+    if v == 2:
+        print(k)
+    
+------------------------------------------------------
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 3, 'c': 4}
+
+
+for k,v in dict2.items():
+    if k in dict1:
+        dict1[k] += v
+
+    else:
+        dict1[k] = v
+
+print(dict1) # {'a': 1, 'b': 5, 'c': 4}
+------------------------------------------------------
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 3, 'c': 4}
+
+dict1.update(dict2)
+print(dict1) # {'a': 1, 'b': 3, 'c': 4}
+
+------------------------------------------------------
+
+------------------------------------------------------
+
+myDict = {'b': 2, 'a': 1, 'c': 3}
+
+keys = list(myDict.keys())
+
+for i in range(len(keys)):
+    for j in range(i+1):
+        if keys[i] < keys[j]:
+            keys[i], keys[j] = keys[j], keys[i]
+
+print(keys)
+
+sortedDict = {}
+
+for k in keys:
+    sortedDict[k] = myDict[k]
+
+print(sortedDict) # {'a': 1, 'b': 2, 'c': 3}
+------------------------------------------------------
+
+
+l1 = [0,1,2,3,4]
+l2 = [0,1,2,3,4]
+
+print(id(l1)) #3015489106048
+print(id(l2)) #3015489104960
+if l1 is l2: # to compare the memory location of the 2 variables
+    print(True)
+else:
+    print(False)
+
+if l1 == l2: # to compare elements of both varibles are equal
+    print(True)
+else:
+    print(False)
+------------------------------------------------------
+import json
+
+#'dict.json' = dt = {1: 73, 2: 41, 3: 58, 4: 12, 5: 86, 6: 24, 7: 95, 8: 37, 9: 62, 10: 79, 11: 13, 12: 22, 13: 91, 14: 54, 15: 69, 16: 33, 17: 17, 18: 88, 19: 47, 20: 59}
+
+primeKeys = []
+
+with open('dict.json', 'r') as f:
+    data = json.load(f)
+
+print(data)
+dictKeys = data.keys()
+print(dictKeys) # dict_keys(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'])
+
+for i in dictKeys:
+    if int(i) > 1:
+        for j in range(2, int(i)):
+            if int(i) % j == 0:
+                break
+
+        else:
+            primeKeys.append(i)
+print(primeKeys) #['2', '3', '5', '7', '11', '13', '17', '19']
+
+primedict = {}
+
+for i in primeKeys:
+    primedict[i] = data[i]
+
+print(primedict) # {'2': 41, '3': 58, '5': 86, '7': 95, '11': 13, '13': 91, '17': 17, '19': 47}
+with open('primedict.json','w') as h:
+    json.dump(primedict, h, indent=4)
+
+'''primedict.json
+{
+    "2": 41,
+    "3": 58,
+    "5": 86,
+    "7": 95,
+    "11": 13,
+    "13": 91,
+    "17": 17,
+    "19": 47
+}
+'''
+------------------------------------------------------
+
+def find_Line_Number_in_File(sentence, filePath):
+    try:
+        with open(filePath, 'r') as data:
+            for line_number, line_value in enumerate(data, start=1): 
+''' enumerate yields pairs containing a count (from start, which
+    defaults to zero) and a value yielded by the iterable argument.'''
+                if sentence in line_value:
+                    return line_number
+    except FileNotFoundError:
+        print("file not found")
+
+    except Exception as e:
+        print(f"execption occured as {e}")
+
+    return None
+
+x = find_Line_Number_in_File(sentence='class grandparents:', filePath=r'C:\Users\Admin\Desktop\OOPS.txt')
+print(x)
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------

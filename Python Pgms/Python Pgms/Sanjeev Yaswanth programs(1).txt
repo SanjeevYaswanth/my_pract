@@ -1,0 +1,76 @@
+1.program to prove tuple,string is immutable:
+
+# writing the tuple
+tup=(10,50,60,"hi")
+#checking the type of tup
+a=type(tup)
+#printing the a
+print(a)
+#checking the index
+b=tup[0]
+print(b)
+#inserting the new value in place of 10
+tup[0]=20
+print(tup)
+
+output:
+
+<class 'tuple'>
+10
+
+tup[0]=20
+TypeError: 'tuple' object does not support item assignment
+
+
+2.program to prove list is mutable:
+
+# writing the list
+l=[20,40.5,60,"hello"]
+#checking the type of l
+a=type(l)
+#printing the a
+print(a)
+#checking the index
+b=l[0]
+print(b)
+#slicing
+c=l[0:3]
+print(c)
+#inserting the new value in place of 20
+l[0]=10
+print(l)
+
+
+
+output:
+
+<class 'list'>
+20
+[20, 40.5, 60]
+[10, 40.5, 60, 'hello']
+
+
+3.program for factorial of a number:
+
+
+
+#take input from the user
+num = int(input("enter num:"))
+
+factorial = 1
+
+# check the number is negative, positive or zero
+if num < 0:
+   print("factorial does not exist for negative numbers")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+   for i in range(1,num + 1):
+       factorial = factorial*i
+   print("The factorial of num is",factorial)
+
+
+output:
+
+enter num:5
+The factorial of num is 120 

@@ -1,0 +1,5 @@
+1. Regular Expression.(Theory followed by some hands-on)
+	https://docs.python.org/3/howto/regex.html#more-metacharacters
+	https://www.princeton.edu/~mlovett/reference/Regular-Expressions.pdf
+	http://opim.wharton.upenn.edu/~sok/idtresources/python/regex.pdf
+	https://arisuchan.jp/%CE%BB/src/1498631701201-0.pdf

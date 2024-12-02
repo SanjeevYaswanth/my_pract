@@ -1,0 +1,20 @@
+1. View a Registry Key
+2. Modify or Remove a Registry Key Value
+3. Create a Registry Key Value
+4. determine whether a computer is a server or a workstation
+5. determine the computer name
+6. find the name of the person currently logged on to a computer
+7. determine how much free memory a computer has
+8. determine how much RAM is installed in a computer
+9. identify devices that are not working (those marked with an exclamation point icon in Device Manager
+10. determine what kind of device is plugged into a USB port
+11. uninstall software using a script
+12.connect to a remote computer using WMI
+13.determine how long a computer has been running
+14.find out how much disk space each user is currently using on a computer
+15.determine the number of records in an event log
+16.read events from the event logs
+17.copy a folder
+18.find out the account name under which a process is running
+19.terminate a process using a script
+20.check for a particular application and close it if not required.

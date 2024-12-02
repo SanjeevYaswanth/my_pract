@@ -1,0 +1,10 @@
+Write the following program using PowerShell scripting
+------------------------------------------------------
+1. Turn on and off airplane mode.
+2. Read all details from device manager.
+3. Read all the driver versions.
+4. Read all the running and and stopped processes in the system.
+5. Read all the network related information.
+6. Read bluetooth realated information and also turn on and off bluetooth.
+7. Reading cpu speed and fan speed.
+8. Read keyboard and mouse information.

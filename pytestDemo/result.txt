@@ -1,0 +1,20 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.5, pytest-8.3.3, pluggy-1.5.0 -- C:\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Source\pytestDemo
+plugins: xdist-3.6.1
+collecting ... collected 24 items / 23 deselected / 1 selected
+
+test_demo2.py::test_great SKIPPED (unconditional skip)                   [100%]
+
+============================== warnings summary ===============================
+test_demo1.py:4
+  C:\Source\pytestDemo\test_demo1.py:4: PytestUnknownMarkWarning: Unknown pytest.mark.sanju - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.sanju
+
+test_demo1.py:11
+  C:\Source\pytestDemo\test_demo1.py:11: PytestUnknownMarkWarning: Unknown pytest.mark.yash - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.yash
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================ 1 skipped, 23 deselected, 2 warnings in 0.02s ================

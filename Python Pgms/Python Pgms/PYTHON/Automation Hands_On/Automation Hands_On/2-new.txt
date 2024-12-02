@@ -1,0 +1,160 @@
+1. open file and read data .. write to some other text file..
+
+sol:
+
+f = open("C:/Users/sanju/Documents/Python/arraycode.txt", "r")
+rd = f.read()
+print(rd)
+f.close()
+
+f= open("C:/Users/sanju/Documents/Python/newfile.txt",'w')
+wt=f.write(rd)
+print(wt)
+f.close()
+
+
+2. write a script that will find a specific string in a .txt file and find how many times the string is avilable....print the o/p into another file.
+
+f = open("C:/Users/sanju/Documents/Python/arraycode.txt", "r")
+rd = f.read()
+print(rd)
+f.close()
+
+import re
+string='integer'
+for i in re.finditer(string,rd):
+    print(i)
+
+
+3. Reading and Writing CSV Data encoded as a CSV file.
+
+
+#program to read and write content from and to a csv file
+#importing required module
+import csv
+f = open("C:/Users/sanju/Documents/Python/Sample.csv", "r")
+rd= csv.reader(f, delimiter=",") #reading from file specifying the delimiter
+lc = 0 #initialising line count
+for row in rd:
+    print(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9])
+    lc += 1
+print("Total", lc, "lines processed.")
+
+wf= open('C:/Users/sanju/Documents/Python/new_sample.csv', "w") #writing the contents in new_sample.csv
+wr = csv.writer(wf, delimiter=',', quotechar='"') #writing commences, list of row contents get written to file
+wr.writerow(['vlsi', 'ECE', '70'])
+wr.writerow(['DLD', 'ECE', '75'])
+wr.writerow(['Embedded', 'ECE', '79'])
+wr.writerow(['Networking', 'CSE', '80'])
+
+
+4. Reading and Writing JSON Data
+
+import json
+json_string={'name':'sanju','age':22,'salary':21000,'ismarried':True,'ishavingGF':None}
+emp_dict=json.dumps(json_string)
+print(type(emp_dict))
+print(emp_dict)
+
+with open('emp.json','w') as f:
+    json.dump(json_string,f)
+
+
+import json
+json_string='''{"name":"sanju","age":22,"salary":21000,"ismarried":true,"ishavingGF":null}'''
+emp_dict=json.loads(json_string)
+print(type(emp_dict))
+print(emp_dict)
+
+with open('emp.json','r') as f:
+    emp_dict=json.load(f)
+
+
+5. Parsing Simple XML Data
+
+#program to simply parse xml 
+#importing the required module
+import xml.etree.ElementTree as ET 
+f = ET.parse("C:/Users/sanju/Documents/Python/sampleXml.xml") #parsing the data and storing it in f
+root = f.getroot() #getting the root
+print(root.tag) 
+print(root.attrib)
+#iterating through the xml tree
+for child in root: 
+    print(child.tag, child.attrib, child.text)
+    for i in child:
+        print(i.tag, i.attrib, i.text)
+
+
+6. Parsing Huge XML Files Incrementally (You need to extract data from a huge XML document using as little memory as possible.)
+
+#program to parse huge xml files
+import xml.etree.ElementTree as ET #importing required modules
+for a, b in ET.iterparse("C:/Users/sanju/Documents/Python/huge_xml.xml"): #a corresponds to the events and b corresponds to the elements
+    if b.tag == "color_swatch" and a=="end": #directly accessing the element
+        print(b.text)
+    if a == "end":
+        print(b.tag, b.attrib, b.text) 
+
+
+7. Take the data in a Python dictionary and turn it into XML.
+
+
+#program to change dictionary to xml
+# importing required modules
+from dict_xml import dict_xml
+
+dictionary = {
+    "stud1": {"python":"70%", "vlsi":"65","DBMS": "63"},
+    "stud2": {"python":"60%", "vlsi":"85","DBMS": "80"},
+    "stud3": {"python":"50%", "vlsi":"55","DBMS": "70"},
+    "stud4": {"python":"90%", "vlsi":"55","DBMS": "65"}
+} #defining a dictionary
+
+xml = dict_xml(dictionary, custom_root='data', attr_type=False).decode() #changing the dictionary to xml and decoding it so that it can be written into a file.
+'''print(xml)'''
+b = open("C:/Users/sanju/Documents/Python/dict-xml.xml", "wt")
+b.write(xml) #writing to file
+
+
+
+8. read an XML document, make changes to it, and then write it back out as XML.
+
+#program to update contents of an xml file
+import xml.etree.ElementTree as ET #importing required modules 
+f = ET.parse("C:/Users/sanju/Documents/Python/sampleXml.xml")
+root = f.getroot() #parsing & getting the root
+print(root.tag)
+print(root.attrib)
+for child in root: #iterating through file
+    print(child.tag, child.attrib, child.text)
+    for gc in child:
+        print(gc.tag, gc.attrib, gc.text)
+
+c1 = root.find('./country[@name="USA"]')
+c1.attrib["name"]="India"
+c2 = root.find('./country/year')
+c2.text="1"
+'''c3 = root.find("./country/neighbor[@name=""]")
+c3.attrib["name"]="India"
+c3.attrib["direction"] ="gh"'''
+'''for neighbor in root[2].iter("neighbor"):
+    neighbor.attrib["name"]="fgfdgfd"
+    neighbor.attrib["direction"]="gffd"'''
+
+f.write("C:/Users/sanju/Documents/Python/output.xml") #writing the updated contents to a different file
+
+
+
+9. Python Program to Find the Size (Resolution) of a Image
+
+#program to get resolution of an image
+#importing required modules
+from PIL import Image
+img = Image.open("C:/Users/sanju/Documents/Python/s.jpg")
+a = img.size #storing resolution in "a"
+print(a) #prints resolution
+
+10.Python Program to Merge Mails (When we want to send the same invitations to many people, the body of the mail does not change. Only the name (and maybe address) needs to be changed.
+Mail merge is a process of doing this. Instead of writing each mail separately, we have a template for body of the mail and a list of names that we merge together to form all the mails.)
+ 
